@@ -36,32 +36,12 @@ async function getmovies() {
 
     data.results.forEach((ele) => {
         const div1 = document.createElement("div");
-        div1.style.backgroundColor = "black";
-        div1.style.border = "2px solid white";
-        div1.style.width = "850px";
-        div1.style.height = "250px";
-        div1.style.border = "2px solid black";
-        div1.style.display = "flex";
-        div1.style.marginTop = "20px";
+
         const img = document.createElement("img");
-        img.style.height = "200px";
-        img.style.width = "250px";
-        img.style.border = '2px solid black';
-        img.style.marginTop = "20px";
-        img.style.marginLeft = "30px";
-        img.style.objectFit = "cover";
+
         img.src = `https://image.tmdb.org/t/p/w500${ele.poster_path}`;
         const div2 = document.createElement("div");
-        div2.style.width = "600px";
-        div2.style.height = "200px";
-        div2.style.marginTop = "20px";
-        div2.style.marginLeft = "30px";
-        div2.style.marginRight = "30px";
-        div2.style.fontSize = "17px";
-        div2.style.fontWeight = "bold";
-        div2.style.border = "2px solid black";
-        div2.style.padding = "10px";
-        div2.style.color = "white";
+
         div2.innerHTML = `<h3>${ele.original_title}</h3>
         <p>${ele.overview}</p>
         <p>Release Date: ${ele.release_date}</p>
@@ -70,13 +50,10 @@ async function getmovies() {
         favbtn.innerText = "Add to Favourites";
         const id = ele.id;
         favbtn.onclick = () => addtoFavourites(id, true);
-        favbtn.style.height = "30px";
-        favbtn.style.width = "150px";
-        favbtn.style.backgroundColor = "red";
-        favbtn.style.color = "white";
-        favbtn.style.border = "none";
-        favbtn.style.borderRadius = "10px";
-        favbtn.style.marginLeft = "350px";
+        div1.className = "movie-card";
+        img.className = "movie-poster";
+        div2.className = "movie-info";
+        favbtn.className = "fav-btn";
 
         div2.append(favbtn);
         div1.append(div2);
@@ -136,32 +113,12 @@ async function getfavourites() {
 
     data.results.forEach((ele) => {
         const div1 = document.createElement("div");
-        div1.style.backgroundColor = "black";
-        div1.style.border = "2px solid white";
-        div1.style.width = "850px";
-        div1.style.height = "250px";
-        div1.style.border = "2px solid black";
-        div1.style.display = "flex";
-        div1.style.marginTop = "20px";
+
         const img = document.createElement("img"); 5
-        img.style.height = "200px";
-        img.style.width = "250px";
-        img.style.border = '2px solid black';
-        img.style.marginTop = "20px";
-        img.style.marginLeft = "30px";
-        img.style.objectFit = "cover";
+
         img.src = `https://image.tmdb.org/t/p/w500${ele.poster_path}`;
         const div2 = document.createElement("div");
-        div2.style.width = "600px";
-        div2.style.height = "200px";
-        div2.style.marginTop = "20px";
-        div2.style.marginLeft = "30px";
-        div2.style.marginRight = "30px";
-        div2.style.fontSize = "17px";
-        div2.style.fontWeight = "bold";
-        div2.style.border = "2px solid black";
-        div2.style.padding = "10px";
-        div2.style.color = "white";
+
         div2.innerHTML = `<h3>${ele.original_title}</h3>
         <p>${ele.overview}</p>
         <p>Release Date: ${ele.release_date}</p>
